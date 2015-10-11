@@ -1,0 +1,102 @@
+We view recipes as sentences of a language, where a word is an ingredient. We further simplify our model by saying that the order of words or ingredients doesn't matter, which is motivated by the fact that ingredients in our corpus aren't always sorted by order of application.
+
+\textit{Open Recipes} \footnote{\url{https://github.com/fictivekin/openrecipes}} is a database of recipes, automatically collected by crawler scripts, in a unified JSON format. As our input corpus, we used the latest Open Recipes dump (accessed on 2014--03-20).
+For practical reasons, we ignore a large part of the information present in the corpus: Neither instructional information on the cooking process is used, nor the amounts of ingredients.
+
+\begin{figure}
+\begin{verbatim}
+12 whole Dinner Rolls Or Small Sandwich Buns (I Used Whole Wheat)
+1 pound Thinly Shaved Roast Beef Or Ham (or Both!)
+10 ounces carrots, shredded on a box grater or sliced whisper thin on a mandolin
+optional: whole pomegranate seeds or fresh/dried rose petals, a bit of bee pollen
+\end{verbatim}
+\caption{Examples of uncleaned ``ingredients'' in the corpus}
+\label{dirty_ingredients}
+\end{figure}
+
+\begin{figure}
+\setlength{\unitlength}{0.75mm}
+\begin{center}
+\begin{picture}(50,40)
+\put(0,0){\color{red}\vector(3,1){20}}
+\put(15,1){\color{red}flour}
+\put(0,0){\color{cyan}\vector(1,2){15}}
+\put(2,25){\color{cyan}salt}
+\thicklines
+\put(0,0){\vector(1,1){35}}
+\put(25,37){comp1}
+\put(0,0){\vector(9,13){15}}
+%\put(25,25){bread}
+\thinlines
+\put(0,0){\vector(1,0){40}}
+\put(0,0){\vector(0,1){40}}
+\end{picture}
+\begin{picture}(50,40)
+\put(0,0){\color{red}\vector(3,1){20}}
+\put(15,1){\color{red}comp1}
+\put(0,0){\color{cyan}\vector(1,2){15}}
+\put(2,25){\color{cyan}water}
+\thicklines
+\put(0,0){\vector(1,1){35}}
+\put(25,37){comp2}
+\put(0,0){\vector(9,13){15}}
+%\put(25,25){bread}
+\thinlines
+\put(0,0){\vector(1,0){40}}
+\put(0,0){\vector(0,1){40}}
+\end{picture}
+\begin{picture}(45,40)
+\put(0,0){\color{red}\vector(3,1){20}}
+\put(15,1){\color{red}comp2}
+\put(0,0){\color{cyan}\vector(1,2){15}}
+\put(2,25){\color{cyan}yeast}
+\thicklines
+\put(0,0){\vector(1,1){35}}
+\put(25,37){comp3}
+\put(0,0){\vector(9,13){15}}
+%\put(25,25){bread}
+\thinlines
+\put(0,0){\vector(1,0){40}}
+\put(0,0){\vector(0,1){40}}
+
+\put(35,30){\circle{1}}
+\put(35,26){bread}
+\end{picture}
+\end{center}
+\caption{Recursively composing $\overrightarrow{bread} \approx \overrightarrow{flour} + \overrightarrow{salt} + \overrightarrow{water} + \overrightarrow{yeast}$}
+\label{composing_ingredients}
+\end{figure}
+
+Co-occurrences between ingredients were then collected. As a first step, the ingredient names were cleaned.
+Because of noisy data entered by users (some examples in Figure~\ref{dirty_ingredients}\footnote{There are many different strings that could be reduced to the same ingredient. Sources for noise are comments by users (see the first two lines of Figure~\ref{dirty_ingredients}), several distinct ingredients listed as one (see the last line), or descriptions of how to handle the ingredient; in general everything that leads to inconsistent entries for the same ingredient.}) and amounts and units being part of the ingredients in the corpus, there was a total of 412,858 different strings for ingredient names. Using a number of heuristics, that included cutting away anything that looked like a unit, a number, parts in parantheses, after commata, a naive stemming procedure, and more, we reduced that number:
+
+% this is for recipes: No existing stemmer was used, due to the special nature of our data. Instead, the cleaning/stemming was done using a number of regular expressions. First, the ingredient was put to lower case, then parantheses around the whole string were removed. After normalizing typographic quotes, everything left in parantheses was removed. Next, posessives (like ``Grandma's'' and typical fragment strings contributing nothing to the recipe\footnote{The same procedure was reused for filtering recipe names.} or ingredient name were pruned (``tutorial'', ``how-to'', ``easy'', etc.).
+No existing stemmer was used, due to the specific nature of our data: The cleaning wasn't in the scope of a stemmer, since we actually want to get rid of a lot of words, not just normalize them. Instead, the cleaning/stemming was done using a number of regular expressions. First, substrings in parantheses were removed, then everything after a potential first comma, all digits (including symbols for fractions commonly used). A few other replacements and prunings were made, like splitting the text at ``for'' and only using the first part (which turns e.g. ``tomatoes from spain'' to ``tomatoes''). Most importantly, using a hand-compiled list, units and their abbreviations were removed, since we don't want to handle ``1 tsp sugar'' and ``2 g sugar'' differently.
+
+\begin{table}
+    \begin{center}
+        \begin{tabular}{lr}
+            \toprule
+            \textbf{Number of recipes} & 172893\\
+            \textbf{Number of ingredients (tokens in corpus)} & 1689892\\
+            \textbf{Number of ingredients (types in corpus)} & 412858\\
+            \textbf{Number of ingredients (types after unifying)} & 6514\\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+    \caption{Information about the corpus}\label{tab:corpusinfo}
+\end{table}
+
+In the end, the number of different ingredients was 6514 (see Table~\ref{tab:corpusinfo}).
+
+The resulting list was then weighted by occurrences. We considered only ingredients used more than ten times to filter out further noise, which brought us down to a reasonable number of 6,326 relevant ingredients. We considered purging even more, after all, this list still contains almost 150 distinct elements containing the string ``onion'', but we assumed we would lose information by removing adjectives, at least for some ingredients. A ``large onion'', for instance, could be used in very different contexts than a ``small onion''.
+
+\begin{equation} \label{eq:pmi}
+    \mathrm{PPMI}(a,b) = \max\left(0,\log{\frac{P(a,b)}{P(a) P(b)}}\right)
+\end{equation}
+
+A large co-occurrence matrix of ingredients was then automatically created. For handling the vector space operations, we utilized the DISSECT toolkit \citep{Dissect}. The matrix was imported as a vector space, weighted with the Positive Pointwise Mutual Information (PPMI, see (\ref{eq:pmi})) measure and reduced to 20 dimensions (after experimenting on 200, and 50 dimensions too), using Singular Value Decomposition. We chose such a low number in the hope that similar features would merge together and our results would eventually not just be reproducing the original recipes when ingredients were composed, but also finding similar recipes that \textit{don't} necessarily contain the ingredients of the original composition.
+
+We then built recipe spaces using two different methods: In our \textbf{BasicRecipes} space we obtained recipe vectors by just setting the co-occurrence of each recipe with all of it's ingredients to 1.
+
+The \textbf{ComposedRecipes} space was created by summing the vectors of all of its ingredients using a recursive (see Figure~\ref{composing_ingredients}) Weighted Additive function \citep{Mitchell:Lapata:2010} with $\alpha$ and $\beta$ set to 1: For a given list of $n$ ingredients, if $n$ is 1, return the first element of the list as the composed vector. Otherwise, take the last two vectors from the list, compose them using the Weighted Additive function, and put them back on the list. This way, even recipes with a large amount of ingredients could be reduced to the same simple vector as ones with fewer ingredients.

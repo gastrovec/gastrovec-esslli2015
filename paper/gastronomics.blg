@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: gastronomics.aux
+Reallocated buffer (elt_size=1) to 40000 items from 20000.
+Reallocated sv_buffer (elt_size=1) to 40000 items from 20000.
+Reallocated ex_buf (elt_size=1) to 40000 items from 20000.
+Reallocated out_buf (elt_size=1) to 40000 items from 20000.
+Reallocated name_tok (elt_size=4) to 40000 items from 20000.
+Reallocated name_sep_char (elt_size=1) to 40000 items from 20000.
+The style file: apalike.bst
+Database file #1: references.bib
+You've used 16 entries,
+            1935 wiz_defined-function locations,
+            562 strings with 5931 characters,
+and the built_in function-call counts, 5801 in all, are:
+= -- 560
+> -- 249
+< -- 12
++ -- 86
+- -- 82
+* -- 452
+:= -- 1040
+add.period$ -- 48
+call.type$ -- 16
+change.case$ -- 119
+chr.to.int$ -- 16
+cite$ -- 16
+duplicate$ -- 238
+empty$ -- 386
+format.name$ -- 108
+if$ -- 1125
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 15
+newline$ -- 82
+num.names$ -- 48
+pop$ -- 115
+preamble$ -- 1
+purify$ -- 121
+quote$ -- 0
+skip$ -- 186
+stack$ -- 0
+substring$ -- 305
+swap$ -- 34
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 92
+warning$ -- 0
+while$ -- 43
+width$ -- 0
+write$ -- 202

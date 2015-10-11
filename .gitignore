@@ -1,0 +1,6 @@
+corpus_collection/recipeitems_latest.json
+corpus_collection/*.cols
+corpus_collection/*.rows
+corpus_collection/*.sm
+**/*.pyc
+**/*.swp

@@ -1,0 +1,212 @@
+Notes to use in slides/poster
+
+1. FS vs DS
+lexical semantics
+(Generative Lexicon, Pustejovsky 1995)
+and
+Distributional Semantics (Baroni 2010).
+
+Formal Semantics studies “meaning” as “reference”.
+Distributional semantics focuses on “meaning” as
+“sense” leading to the “language as use” view.
+
+Focus of FS:
+Grammatical words:
+• prepositions,
+• articles, quantifiers,
+• coordination,
+• auxiliary verbs,
+• Pronouns,
+• negation
+
+Focus of DS:
+Content words:
+• nouns,
+• adjectives,
+• verbs
+
+
+Formal semantics gives an elaborate and elegant
+account of the productive and systematic nature
+of language.
+• The formal account of compositionality relies on:
+– words (the minimal parts of language, with an
+assigned meaning)
+– syntax (the theory which explains how to make
+complex expressions out of words)
+– semantics (the theory which explains how meanings
+are combined in the process of particular syntactic
+compositions).
+
+Theory of Meaning
+A theory of meaning is understood as providing a
+detailed specification of the knowledge that a native
+speaker has about his/her own language. [Dummett, 91]
+In doing this, a theory of meaning has to provide a way
+to assign meaning to all the different words in the
+language and then a mechanism by means of which all
+these meanings can be combined into larger
+expressions to form the meaning of phrases,
+sentences, discourses, and so on.
+
+Truth-conditional semantics program
+To state the meaning of a sentence we should state which
+conditions must be true in the world for this sentence to be
+true.
+e.g. Every man loves a woman.
+
+Frege’s Compositional Semantics
+The meaning of the sentence is determined by
+the meaning of the words of which it is
+composed, and the way in which these are put
+together.
+The linear order of the words in a sentence hide the
+role that different kinds of words play in the
+building of the meaning of the whole.
+
+Formal Semantics uses Lambda Calculus as a
+means of combining meaning guided by the
+syntactic operations.
+
+DS:
+
+DS assumes that the statistical distribution of
+words in context plays a key role in
+characterizing their semantic behavior.
+The idea that word co-occurrence statistics
+extracted from text corpora can provide a basis
+for semantic representations can be traced back
+at least to Firth (1957): ”You shall know a word
+by the company it keeps” and to Harris (1954)
+”words that occur in similar contexts tend to
+have similar meanings”.
+
+You shall know a word by the company it keeps"
+(Firth);
+• The meaning of a word is defined by the way it is
+used (Wittgenstein).
+• This leads to the distributional hypothesis about
+word meaning:
+– the context surrounding a given word provides
+information about its meaning;
+– words are similar if they share similar linguistic
+contexts;
+– semantic similarity = distributional similarity
+
+then examples of similar/disimilar from our semantic space (with maybe plots)
+
+Distributional Semantics is an approach to
+semantics that is based on the contexts of
+words (and linguistic expressions) in large
+corpora.
+
+Take a word and its contexts. By looking at a
+word's context, one can infer its meaning
+• tasty tnassiorc
+• greasy tnassiorc
+• tnassiorc with butter
+• tnassiorc for breakfast
+
+==> Food
+
+DS accounts for different uses of words (like in Generative Lexicon). Take “brown” for
+example. Each adjective acts on nouns in a different way:
+“In order for a cow to be brown most of its body's surface should be brown, though
+not its udders, eyes, or internal organs. A brown crystal, on the other hand, needs
+to be brown both inside and outside. A book is brown if its cover, but not
+necessarily its inner pages, are mostly brown, while a newspaper is brown only if
+all its pages are brown. For a potato to be brown it needs to be brown only
+outside. . . Furthermore, in order for a cow or a bird to be brown the brown color
+should be the animal's natural color, since it is regarded as being `really' brown
+even if it is painted white all over. A table, on the other hand, is brown even if it is
+only painted brown and its `natural' color underneath the paint is, say, yellow. But
+while a table or a bird are not brown if covered with brown sugar, a cookie is. In
+short, what is to be brown is dieffrent for dieffent types of objects. To be sure,
+brown objects do have something in common: a salient part that is wholly
+brownish. But this hardly suffices for an object to count as brown. A signficant
+component of the applicability condition of the predicate `brown' varies from one
+linguistic context to another.” (Lahav 1993:76)
+
+
+Two words are neighbors if they cooccur.
+• The cooccurrence count of words w1 and w2 in
+corpus G is the number of times that w1 and w2
+occur:
+– in a linguistic relationship with each other (e.g., w1 is
+a modifier of w2) or
+– in the same sentence or
+– in the same document or
+– within a distance of at most k words (where k is a
+parameter)
+
+
+Example:
+
+onion vs potato vs salt
+Distributional Semantics
+• The similarity between two words is usually measured
+with the cosine of the angle between them.
+• Small angle: onion and potato are similar.
+Now do this for a very large number of dimension
+words: hundreds or thousands.
+• This is now a very high-dimensional space with a
+large number of vectors represented in it.
+• Note: a word can have a dual role in word space.
+– Each word can, in principle, be a dimension word, an
+axis of the space.
+– But each word is also a vector in that space.
+
+We can compute now the nearest neighbors of
+any word in this in word space.
+• Nearest neighbors of “grapes”:
+
+plot
+
+The vectors in our space have been words so
+far.
+• But we can also represent other entities like:
+phrases, sentences, paragraphs, documents,
+even entire books.
+Compositionality problem: how to obtain the
+distribution vector of a phrase?
+
+DS Strengths:
+– fully automatic construction;
+– representationally simple: all we need is a corpus and some
+notion of what counts as a word;
+– language-independent, cognitively plausible.
+
+• DS Weaknesses:
+– no generative model
+– many ad-hoc parameters
+– ambiguous words: their meaning is the average of all senses
+– context words contribute indiscriminately to meaning;
+[[The cat chases the mouse]] = [[The mouse chases the cat]].
+
+Corpus:
+
+DGSM paramaters
+Linguistic pre-processing (definition of terms)
+⇓
+Term-context vs. term-term matrix
+⇓
+Size & type of context / structured vs. unstructered
+⇓
+Geometric vs. probabilistic interpretation
+⇓
+Feature scaling
+⇓
+Normalisation of rows and/or columns
+⇓
+Similarity / distance measure
+⇓
+Compression
+
+
+Experimental results:
+
+Evaluation:
+
+Thank you
+
+Barcelona context with street hot

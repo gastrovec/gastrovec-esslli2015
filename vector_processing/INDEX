@@ -1,0 +1,10 @@
+importSpace.py              Loads raw ingredient space from ../corpus_collection, applies PPMI and SVD, loads recipes as peripheral space and saves that, too.
+exportSpace.py              Builds a csv with the raw gastrovec space
+findVectors.py              Searches in id2row of a space, standard: gastrovec.ppmi.svd200
+nearestNeigbor.py           Finds n nearest neighbors to input, standard space: gastrovec.ppmi.svd200
+printNumberOf...py          Prints number of recipes in recipes.ppmi.svd200
+jaccard.py                  Jaccard Similarity, because Laura said so
+gastrovec.pkl               original ingredient space, after import
+gastrovec.ppmi.svd200.pkl   ingredient space, PPMI-weighted, SVD-200'd
+recipes.ppmi.svd200.pkl     recipe space, PPMI-weighted, SVD-200'd
+export.*                    exports of raw space, made by exportSpace.py

@@ -1,0 +1,86 @@
+\begin{thebibliography}{}
+
+\bibitem[Ahn et~al., 2011]{ahn2011flavor}
+Ahn, Y.-Y., Ahnert, S.~E., Bagrow, J.~P., and Barab{\'a}si, A.-L. (2011).
+\newblock Flavor network and the principles of food pairing.
+\newblock {\em Scientific reports}, 1.
+
+\bibitem[Dinu et~al., 2013]{Dissect}
+Dinu, G., Pham, N.~T., and Baroni, M. (2013).
+\newblock Dissect- distributional semantics composition toolkit.
+
+\bibitem[Francis and Kucera, 1979]{francis1979brown}
+Francis, W.~N. and Kucera, H. (1979).
+\newblock Brown corpus manual.
+\newblock {\em Brown University}.
+
+\bibitem[{Fritz Guenther}, 2014]{LSAfun}
+{Fritz Guenther} (2014).
+\newblock {\em LSAfun: Applied Latent Semantic Analysis (LSA) functions}.
+\newblock R package version 0.1.
+
+\bibitem[{Jain} et~al., 2015]{2015arXiv150203815J}
+{Jain}, A., {K}, R.~N., and {Bagler}, G. (2015).
+\newblock {Spices form the basis of food pairing in Indian cuisine}.
+\newblock {\em ArXiv e-prints}.
+
+\bibitem[Jiang and Conrath, 1997]{jiang1997semantic}
+Jiang, J.~J. and Conrath, D.~W. (1997).
+\newblock Semantic similarity based on corpus statistics and lexical taxonomy.
+\newblock {\em arXiv preprint cmp-lg/9709008}.
+
+\bibitem[Jurafsky, 2014]{jurafsky2014language}
+Jurafsky, D. (2014).
+\newblock {\em The Language of Food: A Linguist Reads the Menu}.
+\newblock WW Norton \& Company.
+
+\bibitem[Malmaud et~al., 2014]{malmaud2014cooking}
+Malmaud, J., Wagner, E.~J., Chang, N., and Murphy, K. (2014).
+\newblock Cooking with semantics.
+\newblock {\em ACL 2014}, page~33.
+
+\bibitem[Miller, 1995]{miller1995wordnet}
+Miller, G.~A. (1995).
+\newblock Wordnet: a lexical database for english.
+\newblock {\em Communications of the ACM}, 38(11):39--41.
+
+\bibitem[Mitchell and Lapata, 2010]{Mitchell:Lapata:2010}
+Mitchell, J. and Lapata, M. (2010).
+\newblock Composition in distributional models of semantics.
+\newblock {\em Cognitive Science}, 34(8):1388--1439.
+
+\bibitem[Regneri et~al., 2013]{regneri2013grounding}
+Regneri, M., Rohrbach, M., Wetzel, D., Thater, S., Schiele, B., and Pinkal, M.
+  (2013).
+\newblock Grounding action descriptions in videos.
+\newblock {\em Transactions of the Association for Computational Linguistics},
+  1:25--36.
+
+\bibitem[Rozin, 1973]{rozin1973flavor}
+Rozin, E. (1973).
+\newblock {\em The flavor-principle cookbook}.
+\newblock Hawthorn Books.
+
+\bibitem[Tasse and Smith, 2008]{tasse2008sour}
+Tasse, D. and Smith, N.~A. (2008).
+\newblock Sour cream: Toward semantic processing of recipes.
+\newblock Technical report, Technical Report CMU-LTI-08-005, Carnegie Mellon
+  University, Pittsburgh, PA.
+
+\bibitem[Teng et~al., 2012]{teng2012recipe}
+Teng, C.-Y., Lin, Y.-R., and Adamic, L.~A. (2012).
+\newblock Recipe recommendation using ingredient networks.
+\newblock In {\em Proceedings of the 4th Annual ACM Web Science Conference},
+  pages 298--307. ACM.
+
+\bibitem[Turney and Pantel, 2010]{TurneyPantel}
+Turney, P.~D. and Pantel, P. (2010).
+\newblock From frequency to meaning: Vector space models of semantics.
+\newblock {\em CoRR}, abs/1003.1141.
+
+\bibitem[Zhang et~al., 2008]{zhang2008back}
+Zhang, Q., Hu, R., Mac~Namee, B., and Delany, S.~J. (2008).
+\newblock Back to the future: Knowledge light case base cookery.
+\newblock In {\em Conference papers}, page~15.
+
+\end{thebibliography}

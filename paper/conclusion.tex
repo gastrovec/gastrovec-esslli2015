@@ -1,0 +1,15 @@
+The presented methods are just a first step in what we expect to be a long future of distributional gastronomics. We took only the most obvious steps and expect others (and ourselves) to come up with more advanced techniques in the near future.
+
+We composed solely using untrained Weighted Additive functions, and Cosine distance as a similarity measure. Future work could explore other composition methods and similarity measures. It would also be interesting to see whether giving up on some of our simplifications can produce more interesting results:
+
+If the ingredient list is expected to be sorted in some way, order of ingredients could play a role in the weighting of composing vectors. A different improvement could lie in harnessing the supplied amounts (and units) of ingredients to see whether an ingredient plays a major role in a recipe or is just a small addition. An obvious improvement to our data would have been a cleaner corpus with standardized, fixed ingredient names, clearly seperated by amounts and units.
+
+We completely ignore the cooking instructions, by which we obviously lose a lot of information, exemplified by the fact that there are many ways to combine a set of ingredients. Integrating it --- maybe in a manner similar to \cite{teng2012recipe} --- into the vector model should yield an improvement. A different source corpus as a start could partially solve many of the problems mentioned, but would likely come with a loss in size.
+
+% MILK or something like that?
+
+Better methods of automatic evaluation would be a welcome addition to our work, alternatively, evaluating it against a large-scale human gold standard: One could use a platform like Amazon Mechanical Turk\footnote{\url{http://mturk.com}} to have annotators assess similarity judgements made by our system.
+
+Very interesting to see would be applications built on distributional gastronomics. As proposed in our abstract, such an application could consist of making recipe proposals to a user who enters a list of ingredients they have. A very simple proof-of-concept of such an application was written as a small script working on our ingredient and \textbf{ComposedRecipes} space.
+
+As shown in \cite{ahn2011flavor} (and recently validated for Indian cuisine in \cite{2015arXiv150203815J}), recipes from different parts of the world behave very different: While the flavor in western cuisine is mostly similar, East-Asian cuisine pairs contrasting flavors in typical recipes. Given that insight, vector spaces for different cuisines will look very different and localized spaces might gain informativeness over general ones.

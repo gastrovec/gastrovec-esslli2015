@@ -1,0 +1,8 @@
+When explaining the concept of an algorithm to someone unfamiliar with it, an often used example for real-world applications of ``algorithms'' is \textit{recipes}. Recipes are (somewhat) unambiguous instructions on when to add what ingredient in what way and how to process it to result in a certain meal. Algorithms are written in some kind of language whose interpretation gives the interpreter (whether human or computer), some clue on how to perform it.
+
+Using a online database of recipes, we therefore collect co-occurrence counts for ingredients, and then use them to compose them back into recipes. We find our ingredient space gives interesting results when queried for nearest neighbors of ingredients. The composed recipes, unsurprisingly, are close to original recipes with similar ingredients.
+
+Like \cite{jurafsky2014language}, we see food as a language, more specifically, recipes. In the tradition of distributional semantics \citep{TurneyPantel}, we assume that the ``meaning'' of a word or ingredient is given by the context in which it occurs. The distributional (gastronomical) hypothesis states that similar ingredients should appear in similar contexts.
+%#distributional methods for meaning similarity
+%- trying to find sublte l
+%The words we used to describe food in recipes tell

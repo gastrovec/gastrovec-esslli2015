@@ -1,0 +1,65 @@
+%\documentclass[citeauthoryear]{llncs}
+\documentclass{llncs}
+%\documentclass[citeauthoryear]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[stretch=10]{microtype}
+\usepackage{amsmath}
+%\usepackage{amssymb}
+%\usepackage[]{amsthm}
+%\usepackage[margin=1in]{geometry} 
+%\usepackage{tipa}
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom 
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\linespread{1.1} % Line spacing
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+\usepackage{titlesec}
+\titlelabel{\thetitle\quad}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{picture}
+
+\usepackage{color}
+\usepackage{extramarks} % Required for headers and footers
+
+\title{Distributional Gastronomics}
+\author{
+    Jonathan Oberländer
+    \and
+    Laura Bostan
+}
+\institute{}
+\date{March 2015}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\input{abstract.tex}
+\end{abstract}
+
+\section{Introduction}
+\input{introduction.tex}
+
+\section{Related Work}
+\input{related.tex}
+
+\section{Methods}
+\input{methods.tex}
+
+\newpage
+\section{Results}
+\input{results.tex}
+
+\section{Conclusion \& Future Work}
+\input{conclusion.tex}
+
+%\usepackage[round]{natbib}
+\bibliographystyle{apalike}
+\bibliography{references}
+\end{document}
